@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:authentication_ui/common/common.dart';
 import 'package:authentication_ui/router/router.dart';
+import 'package:authentication_ui/screens/fade_animationtest.dart';
 import 'package:authentication_ui/widgets/custom_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,64 +36,80 @@ class _AuthenticationUIState extends State<AuthenticationUI> {
             child: SizedBox(
               child: Column(
                 children: [
-                  Container(
-                    height: 60,
-                    width: 60,
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage(
-                                "assets/images/main logo light color.png"))),
+                  FadeInAnimation(
+                    delay: 1,
+                    child: Container(
+                      height: 60,
+                      width: 60,
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  "assets/images/main logo light color.png"))),
+                    ),
                   ),
-                  Text(
-                    "Flutter Spirit ❤️",
-                    style: Common().titelTheme,
+                  FadeInAnimation(
+                    delay: 1.5,
+                    child: Text(
+                      "Flutter Spirit ❤️",
+                      style: Common().titelTheme,
+                    ),
                   ),
                   const SizedBox(
                     height: 60,
                   ),
-                  CustomElevatedButton(
-                    message: "Login",
-                    function: () {
-                      GoRouter.of(context).pushNamed(Routers.loginpage.name);
-                    },
-                    color: Colors.black,
+                  FadeInAnimation(
+                    delay: 2,
+                    child: CustomElevatedButton(
+                      message: "Login",
+                      function: () {
+                        GoRouter.of(context).pushNamed(Routers.loginpage.name);
+                      },
+                      color: Colors.black,
+                    ),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        GoRouter.of(context).pushNamed(Routers.signuppage.name);
-                      },
-                      style: ButtonStyle(
-                          side: const MaterialStatePropertyAll(
-                              BorderSide(color: Colors.black)),
-                          shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10))),
-                          fixedSize: const MaterialStatePropertyAll(
-                              Size.fromWidth(370)),
-                          padding: const MaterialStatePropertyAll(
-                            EdgeInsets.symmetric(vertical: 20),
-                          ),
-                          backgroundColor:
-                              const MaterialStatePropertyAll(Colors.white)),
-                      child: const Text(
-                        "Register",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontFamily: "Urbanist-SemiBold",
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      )),
+                  FadeInAnimation(
+                    delay: 2.5,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          GoRouter.of(context)
+                              .pushNamed(Routers.signuppage.name);
+                        },
+                        style: ButtonStyle(
+                            side: const MaterialStatePropertyAll(
+                                BorderSide(color: Colors.black)),
+                            shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10))),
+                            fixedSize: const MaterialStatePropertyAll(
+                                Size.fromWidth(370)),
+                            padding: const MaterialStatePropertyAll(
+                              EdgeInsets.symmetric(vertical: 20),
+                            ),
+                            backgroundColor:
+                                const MaterialStatePropertyAll(Colors.white)),
+                        child: const Text(
+                          "Register",
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontFamily: "Urbanist-SemiBold",
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        )),
+                  ),
                   const SizedBox(
                     height: 50,
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child:
-                        Text("Continue as guest", style: Common().mediumTheme),
+                  FadeInAnimation(
+                    delay: 2.5,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text("Continue as guest",
+                          style: Common().mediumTheme),
+                    ),
                   ),
                   SizedBox(
                     height: 10,

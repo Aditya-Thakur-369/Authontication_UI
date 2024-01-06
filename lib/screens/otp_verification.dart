@@ -2,12 +2,12 @@
 
 import 'package:authentication_ui/common/common.dart';
 import 'package:authentication_ui/router/router.dart';
+import 'package:authentication_ui/screens/fade_animationtest.dart';
 import 'package:authentication_ui/widgets/custom_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class OtpVerificationPage extends StatefulWidget {
   const OtpVerificationPage({super.key});
@@ -49,26 +49,35 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconButton(
-                  onPressed: () {
-                    GoRouter.of(context).pop();
-                  },
-                  icon: const Icon(
-                    CupertinoIcons.back,
-                    size: 35,
-                  )),
+              FadeInAnimation(
+                delay: 1,
+                child: IconButton(
+                    onPressed: () {
+                      GoRouter.of(context).pop();
+                    },
+                    icon: const Icon(
+                      CupertinoIcons.back,
+                      size: 35,
+                    )),
+              ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "OTP Verification",
-                      style: Common().titelTheme,
+                    FadeInAnimation(
+                      delay: 1.3,
+                      child: Text(
+                        "OTP Verification",
+                        style: Common().titelTheme,
+                      ),
                     ),
-                    Text(
-                      "Enter the verification code we just sent on your email address.",
-                      style: Common().mediumThemeblack,
+                    FadeInAnimation(
+                      delay: 1.6,
+                      child: Text(
+                        "Enter the verification code we just sent on your email address.",
+                        style: Common().mediumThemeblack,
+                      ),
                     )
                   ],
                 ),
@@ -78,54 +87,64 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
                 child: Form(
                   child: Column(
                     children: [
-                      Pinput(
-                        defaultPinTheme: defaultPinTheme,
-                        focusedPinTheme: focusedPinTheme,
-                        submittedPinTheme: submittedPinTheme,
-                        validator: (s) {
-                          return s == '2222' ? null : 'Pin is incorrect';
-                        },
-                        pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-                        showCursor: true,
-                        onCompleted: (pin) {
-                          print(pin);
-                        },
+                      FadeInAnimation(
+                        delay: 1.9,
+                        child: Pinput(
+                          defaultPinTheme: defaultPinTheme,
+                          focusedPinTheme: focusedPinTheme,
+                          submittedPinTheme: submittedPinTheme,
+                          validator: (s) {
+                            return s == '2222' ? null : 'Pin is incorrect';
+                          },
+                          pinputAutovalidateMode:
+                              PinputAutovalidateMode.onSubmit,
+                          showCursor: true,
+                          onCompleted: (pin) {
+                            print(pin);
+                          },
+                        ),
                       ),
                       const SizedBox(
                         height: 30,
                       ),
-                      CustomElevatedButton(
-                        message: "Verify",
-                        function: () {
-                          GoRouter.of(context)
-                              .pushNamed(Routers.newpassword.name);
-                        },
-                        color: Colors.black,
+                      FadeInAnimation(
+                        delay: 2.1,
+                        child: CustomElevatedButton(
+                          message: "Verify",
+                          function: () {
+                            GoRouter.of(context)
+                                .pushNamed(Routers.newpassword.name);
+                          },
+                          color: Colors.black,
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
               const Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(left: 50),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don’t have an account?",
-                      style: Common().hinttext,
-                    ),
-                    TextButton(
-                        onPressed: () {
-                          GoRouter.of(context)
-                              .pushNamed(Routers.signuppage.name);
-                        },
-                        child: Text(
-                          "Register Now",
-                          style: Common().mediumTheme,
-                        )),
-                  ],
+              FadeInAnimation(
+                delay: 2.4,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don’t have an account?",
+                        style: Common().hinttext,
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            GoRouter.of(context)
+                                .pushNamed(Routers.signuppage.name);
+                          },
+                          child: Text(
+                            "Register Now",
+                            style: Common().mediumTheme,
+                          )),
+                    ],
+                  ),
                 ),
               )
             ],

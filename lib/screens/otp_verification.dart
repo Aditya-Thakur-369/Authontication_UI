@@ -23,9 +23,9 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
       width: 56,
       height: 56,
       textStyle: const TextStyle(
-          fontSize: 20, color: Colors.black, fontWeight: FontWeight.w600),
+          fontSize: 20, color: Colors.grey, fontWeight: FontWeight.w600),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
+        border: Border.all(color: Colors.grey.shade800),
         borderRadius: BorderRadius.circular(20),
       ),
     );
@@ -42,7 +42,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
     );
 
     return Scaffold(
-      backgroundColor: const Color(0xFFE8ECF4),
+      // backgroundColor: const Color(0xFFE8ECF4),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

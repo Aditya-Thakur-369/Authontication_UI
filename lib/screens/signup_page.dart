@@ -17,7 +17,7 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(232, 236, 244, 1),
+      // backgroundColor: const Color.fromRGBO(232, 236, 244, 1),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -147,7 +147,10 @@ class _SignupPageState extends State<SignupPage> {
                               SvgPicture.asset(
                                   "assets/images/facebook_ic (1).svg"),
                               SvgPicture.asset("assets/images/google_ic-1.svg"),
-                              Image.asset("assets/images/Vector.png")
+                              Image.asset(
+                                "assets/images/Vector.png",
+                                color: Colors.grey,
+                              )
                             ],
                           ),
                         ),

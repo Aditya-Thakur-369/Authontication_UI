@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE8ECF4),
+      // backgroundColor: const Color(0xFFE8ECF4),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
@@ -94,20 +94,29 @@ class _LoginPageState extends State<LoginPage> {
                                       Icons.remove_red_eye_outlined))),
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       FadeInAnimation(
                         delay: 2.5,
                         child: Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                              onPressed: () {
-                                GoRouter.of(context)
-                                    .pushNamed(Routers.forgetpassword.name);
-                              },
-                              child: Text(
-                                "Forget Password?",
-                                style: Common().semiboldblack,
-                              )),
-                        ),
+                            alignment: Alignment.centerRight,
+                            child: GestureDetector(
+                                onTap: () {
+                                  GoRouter.of(context)
+                                      .pushNamed(Routers.forgetpassword.name);
+                                },
+                                child: Text(
+                                  "Forget Password?",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: "Urbanist-SemiBold",
+                                  ),
+                                ))),
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       FadeInAnimation(
                         delay: 2.8,
@@ -163,7 +172,10 @@ class _LoginPageState extends State<LoginPage> {
                               SvgPicture.asset(
                                   "assets/images/facebook_ic (1).svg"),
                               SvgPicture.asset("assets/images/google_ic-1.svg"),
-                              Image.asset("assets/images/Vector.png")
+                              Image.asset(
+                                "assets/images/Vector.png",
+                                color: Colors.grey,
+                              )
                             ],
                           ),
                         ),

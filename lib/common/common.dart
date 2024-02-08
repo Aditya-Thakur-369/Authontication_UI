@@ -6,10 +6,11 @@ class Common {
   Color black = const Color(0xFF1E232C);
 
   TextStyle titelTheme = const TextStyle(
-      fontSize: 30,
-      fontFamily: "Urbanist",
-      fontWeight: FontWeight.bold,
-      color: Colors.black);
+    fontSize: 30,
+    fontFamily: "Urbanist",
+    fontWeight: FontWeight.bold,
+    // color: Colors.white
+  );
   TextStyle mediumTheme = const TextStyle(
       fontSize: 15,
       fontFamily: "Urbanist-Bold",
@@ -26,7 +27,9 @@ class Common {
       fontWeight: FontWeight.bold,
       color: Colors.white);
   TextStyle semiboldblack = const TextStyle(
-      fontSize: 15, fontFamily: "Urbanist-SemiBold", color: Colors.black);
+    fontSize: 15, fontFamily: "Urbanist-SemiBold",
+    //  color: Colors.white
+  );
   TextStyle hinttext = const TextStyle(
       fontSize: 15, fontFamily: 'Urbanist-Medium', color: Color(0xFF8391A1));
 }

@@ -1,10 +1,7 @@
-import 'dart:ui';
-
 import 'package:authentication_ui/common/common.dart';
 import 'package:authentication_ui/router/router.dart';
 import 'package:authentication_ui/screens/fade_animationtest.dart';
 import 'package:authentication_ui/widgets/custom_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,7 +19,7 @@ class _AuthenticationUIState extends State<AuthenticationUI> {
       body: Stack(
         children: [
           SizedBox(
-              height: MediaQuery.of(context).size.height,
+              height: MediaQuery.of(context).size.height ,
               width: MediaQuery.of(context).size.width,
               child: Image.asset(
                 "assets/images/img.png",
@@ -48,11 +45,15 @@ class _AuthenticationUIState extends State<AuthenticationUI> {
                                   "assets/images/main logo light color.png"))),
                     ),
                   ),
-                  FadeInAnimation(
+                  const FadeInAnimation(
                     delay: 1.5,
                     child: Text(
                       "Flutter Spirit ❤️",
-                      style: Common().titelTheme,
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontFamily: "Urbanist",
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                     ),
                   ),
                   const SizedBox(
@@ -111,7 +112,7 @@ class _AuthenticationUIState extends State<AuthenticationUI> {
                           style: Common().mediumTheme),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                 ],

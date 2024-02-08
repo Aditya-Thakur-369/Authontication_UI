@@ -29,10 +29,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       controller: widget.controller,
       obscureText: widget.obsecuretext,
       decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(18),
+          contentPadding: const EdgeInsets.all(18),
           // border: InputBorder.none,
           border: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black),
+              borderSide: const BorderSide(color: Colors.black),
               borderRadius: BorderRadius.circular(12)),
           hintText: widget.hinttext,
           hintStyle: Common().hinttext),
@@ -73,11 +73,11 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
         });
       },
       style: ButtonStyle(
-          side: MaterialStatePropertyAll(BorderSide(color: Colors.black)),
+          side: const MaterialStatePropertyAll(BorderSide(color: Colors.grey)),
           shape: MaterialStatePropertyAll(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
           fixedSize: const MaterialStatePropertyAll(Size.fromWidth(370)),
-          padding: MaterialStatePropertyAll(
+          padding: const MaterialStatePropertyAll(
             EdgeInsets.symmetric(vertical: 20),
           ),
           backgroundColor: MaterialStatePropertyAll(widget.color)),

@@ -17,7 +17,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE8ECF4),
+      // backgroundColor: const Color(0xFFE8ECF4),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
